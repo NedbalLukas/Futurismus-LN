@@ -1,74 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futurism Redefined</title>
+    <title>Vesmírná Cesta - Futurismus</title>
     <link rel="stylesheet" href="Styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <img src="logo.png" alt="Logo">
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#innovations">Innovations</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>Budoucnost je tady: Přenos na jinou planetu</h1>
+        <p>Připravte se na cestu do nového světa!</p>
     </header>
-    
 
-    <main>
-        <section id="about" class="section about">
-            <div class="container">
-                <h2>About Futurism</h2>
-                <p>Futurism explores the transformative power of technology, aiming to revolutionize society and culture.</p>
-            </div>
-        </section>
+    <section id="description">
+        <h2>Jak to funguje</h2>
+        <p>V roce 2050 se lidstvo naučilo cestovat meziplanetárně. Cestujeme prostřednictvím hyperrychlých raket, které nás bezpečně dopraví na nově objevené planety.</p>
+        <h2>Kde letíme?</h2>
+        <p>Naše mise směřuje na planetu Nova Terra, která je vzdálená 4 světelné roky od Země.</p>
+        <h2>Čím letíme?</h2>
+        <p>Používáme pokročilé plazmové rakety s umělou inteligencí pro bezpečný a komfortní let.</p>
+    </section>
 
-        <section id="innovations" class="section innovations">
-            <div class="container">
-                <h2>Innovations</h2>
-                <p>Technological breakthroughs such as AI and robotics are leading to new discoveries and innovation.</p>
-            </div>
-        </section>
+    <section id="form">
+        <h2>Přihlaste se na cestu</h2>
+        <form id="flightForm">
+            <label for="name">Jméno:</label>
+            <input type="text" id="name" name="name" required>
 
-        <section id="gallery" class="section gallery">
-            <div class="container gallery-grid">
-                <img src="futuristic_image1.jpg" alt="Futuristic Art 1">
-                <img src="futuristic_image2.jpg" alt="Futuristic Art 2">
-                <img src="futuristic_image3.jpg" alt="Futuristic Art 3">
-            </div>
-        </section>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <p>If you have any questions or suggestions, feel free to reach out!</p>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+            <label for="date">Datum odletu:</label>
+            <input type="date" id="date" name="date" required>
 
-    <footer class="footer">
-        <div class="container">
-            <p>2024 Futurism Design © All rights reserved</p>
-        </div>
+            <label for="message">Zpráva pro posádku:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <button type="submit">Rezervovat místo</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2050 SpaceX - Vesmírná mise Nova Terra</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

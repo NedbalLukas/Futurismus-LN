@@ -2,161 +2,93 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Tmavé pozadí */
-    color: #e0e0e0; /* Světlejší text */
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+header {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(45deg, #2a2a72, #009ffd);
 }
 
-.header {
-    background-color: #1a1a1a; /* Tmavý odstín pro hlavičku */
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.logo img {
-    height: 40px;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.nav ul li a {
-    color: #ffffff; /* Světlá modrá */
-    text-decoration: none;
-    font-size: 1.1rem;
-    position: relative; /* Pro podtržení */
-    transition: color 0.3s ease;
-}
-
-.nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -5px; /* Umístění podtržení pod text */
-    width: 0;
-    height: 2px;
-    background-color: #ffffff; /* Barva podtržení */
-    transition: width 0.3s ease, left 0.3s ease;
-}
-
-.nav ul li a:hover {
-    color: #00b0ff; /* Tmavší odstín modré */
-}
-
-.nav ul li a:hover::after {
-    width: 100%; /* Podtržení se rozšíří na šířku textu */
-    left: 0; /* Podtržení začne z levého okraje */
-}
-
-.section {
-    padding: 80px 0; /* Větší mezery mezi sekcemi */
-    margin: 60px 0; /* Zvětšená mezera mezi sekcemi */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-}
-
-.about {
-    background-color: #1f1f1f; /* Tmavší pozadí pro About */
-}
-
-.innovations {
-    background-color: #252525; /* Ještě tmavší pozadí pro Innovations */
-}
-
-.gallery {
-    background-color: #1f1f1f; /* Tmavší pozadí pro Gallery */
-}
-
-.contact {
-    background-color: #2c2c2c; /* Nová barva pro Contact Us */
-}
-
-.section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffffff; /* Světlá modrá */
-    text-align: center; /* Vycentrování nadpisu */
-}
-
-.section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #ccc; /* Světlejší text pro popisy */
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center; /* Vycentrování textu */
-}
-
-.gallery-grid {
-    display: flex;
-    justify-content: center; /* Vycentrování galerie */
-    gap: 30px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.1); /* Zvýšení efektu */
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #333;
-    background-color: #282828; /* Tmavší input */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
     color: #fff;
 }
 
-.contact button {
-    padding: 15px;
-    background-color: #ff4081; /* Nová barva pro tlačítko */
-    color: black;
+header p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+#description h2 {
+    font-size: 2rem;
+    color: #009ffd;
+    margin-bottom: 10px;
+}
+
+#description p {
+    margin-bottom: 20px;
+}
+
+#form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
     border: none;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+form button {
+    padding: 10px;
+    background-color: #009ffd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
 }
 
-.contact button:hover {
-    background-color: #f50057; /* Tmavší odstín pro hover */
-    transform: translateY(-2px); /* Efekt při hoveru */
+form button:hover {
+    background-color: #0076b6;
 }
 
-.footer {
-    background-color: #1a1a1a;
-    color: white;
+footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e;
     margin-top: 40px;
+}
+
+footer p {
+    color: #888;
 }

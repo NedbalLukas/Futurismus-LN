@@ -1,38 +1,18 @@
-// GSAP animation for sections
-gsap.registerPlugin(ScrollTrigger);
+window.onload = function() {
+    // Animace pomocí GSAP
+    gsap.from("header h1", { duration: 2, y: -50, opacity: 0, ease: "bounce" });
+    gsap.from("header p", { duration: 2, x: 50, opacity: 0, delay: 1 });
 
-// Animate sections on scroll
-const sections = document.querySelectorAll('.section');
-sections.forEach(section => {
-    gsap.from(section, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "top center",
-            scrub: true,
-        }
-    });
-});
+    gsap.from("#description h2", { duration: 1, x: -100, opacity: 0, stagger: 0.5, delay: 1.5 });
+    gsap.from("#description p", { duration: 1, x: 100, opacity: 0, stagger: 0.5, delay: 2 });
 
-// Smooth scrolling for links
-const links = document.querySelectorAll('.nav ul li a');
+    gsap.from("#form h2", { duration: 1.5, scale: 0.5, opacity: 0, delay: 3 });
+    gsap.from("#flightForm", { duration: 2, opacity: 0, delay: 3.5 });
 
-links.forEach(link => {
-    link.addEventListener('click', function(e) {
+    // Formulářová validace a odeslání
+    const form = document.getElementById('flightForm');
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        gsap.to(window, {
-            scrollTo: {
-                y: targetSection.offsetTop,
-                autoKill: false
-            },
-            duration: 1,
-            ease: "power2.out"
-        });
+        alert("Formulář byl úspěšně odeslán!");
     });
-});
+}
