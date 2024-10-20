@@ -140,23 +140,6 @@ form.dark-mode button {
     color: #0b0c10;
 }
 
-footer {
-    padding: 20px;
-    background-color: #333;
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-}
-
-footer .social-links a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-footer .social-links a:hover {
-    color: #7f8c8d;
-}
-
 /* Základní styly pro tabulku */
 .pricing-table {
     width: 80%; /* Zmenšená šířka tabulky */
@@ -223,4 +206,49 @@ body.dark-mode .table-container th {
 body.dark-mode .table-container td {
     border-bottom: 1px solid #777; /* Světlé okraje */
 }
+footer {
+    padding: 30px;
+    background: linear-gradient(135deg, #0b0c10, #444); /* Gradient pozadí */
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.footer-content h2 {
+    margin-bottom: 15px;
+    font-size: 2rem; /* Větší písmo pro lepší čitelnost */
+    transition: transform 0.3s ease; /* Přidání animace */
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content .social-links {
+    margin: 20px 0;
+}
+
+.footer-content .social-links a {
+    color: #ffffff; /* Barva textu odkazů */
+    text-decoration: none; /* Bez podtržení */
+    transition: color 0.3s; /* Přidání animace */
+}
+
+.footer-content .social-links a:hover {
+    color: #ffffff; /* Změna barvy při hoveru */
+}
+
+.footer-content p:last-child a {
+    text-decoration: underline; /* Podtržení emailu */
+    color: #ffffff; /* Barva odkazu */
+}
+
+body.dark-mode footer {
+    background: linear-gradient(135deg, #222, #444); /* Tmavý gradient pozadí */
+}
+
+footer:hover .footer-content h2 {
+    transform: scale(1.05); /* Zvětšení názvu footeru při hoveru */
+}
+
 
