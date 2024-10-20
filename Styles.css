@@ -6,17 +6,17 @@
 }
 
 body {
-    background-color: #0b0c10;
-    color: #c5c6c7;
+    background-color: #f0f0f0; /* Neutrální šedé pozadí */
+    color: #0b0c10;
     line-height: 1.6;
     scroll-behavior: smooth;
 }
 
 header {
-    background: linear-gradient(45deg, #1f2833, #66fcf1);
+    background-color: #ffffff; /* Bílé pozadí pro header */
     padding: 100px 0;
     text-align: center;
-    color: #fff;
+    color: #0b0c10;
 }
 
 header h1 {
@@ -26,7 +26,7 @@ header h1 {
 
 header p {
     font-size: 1.5rem;
-    color: #ddd;
+    color: #555;
 }
 
 #intro, #technology, #journey, #signup {
@@ -61,7 +61,7 @@ header p {
 .journey-step h3 {
     margin-top: 10px;
     font-size: 1.5rem;
-    color: #66fcf1;
+    color: #0b0c10;
 }
 
 form {
@@ -69,10 +69,10 @@ form {
     flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
-    background-color: #1f2833;
+    background-color: #ffffff; /* Bílé pozadí pro formulář */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -85,16 +85,16 @@ form label {
 
 form input, form select, form textarea {
     padding: 10px;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #45a29e;
-    color: #0b0c10;
+    background-color: #fff;
+    color: #333;
 }
 
 form button {
     padding: 10px;
-    background-color: #66fcf1;
-    color: #0b0c10;
+    background-color: #0b0c10;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -103,19 +103,19 @@ form button {
 }
 
 form button:hover {
-    background-color: #45a29e;
+    background-color: #555; /* Hover efekt pro tlačítko */
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #1f2833;
-    color: #c5c6c7;
+    background-color: #ffffff; /* Bílé pozadí pro footer */
+    color: #0b0c10;
     margin-top: 50px;
 }
 
 footer .social-links a {
-    color: #66fcf1;
+    color: #0b0c10;
     text-decoration: none;
     margin: 0 10px;
 }
@@ -124,9 +124,8 @@ footer .social-links a:hover {
     text-decoration: underline;
 }
 
-/* Animace */
 form input:focus, form textarea:focus {
-    background-color: #66fcf1;
+    background-color: #fff;
     color: #0b0c10;
     transition: background-color 0.5s ease-in-out;
 }
@@ -153,4 +152,210 @@ footer .social-links {
     header p {
         font-size: 1.2rem;
     }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Plynulá animace pro pozadí a barvy textu */
+}
+
+body {
+    background-color: #f0f0f0; /* Neutrální šedé pozadí */
+    color: #0b0c10;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #ffffff; /* Bílé pozadí pro header */
+    padding: 100px 0;
+    text-align: center;
+    color: #0b0c10; /* Barva textu v headeru */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Plynulá animace pro header */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+#intro, #technology, #journey, #signup {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.intro-grid, .technology-grid, .journey-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.intro-grid, .technology-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.journey-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    text-align: center;
+}
+
+.image-container img, .journey-step img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.journey-step h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #0b0c10;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Bílé pozadí pro formulář */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease; /* Plynulá animace pro formulář */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+form button {
+    padding: 10px;
+    background-color: #0b0c10;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #555; /* Hover efekt pro tlačítko */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Bílé pozadí pro footer */
+    color: #0b0c10;
+    margin-top: 50px;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Plynulá animace pro footer */
+}
+
+footer .social-links a {
+    color: #0b0c10;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+form input:focus, form textarea:focus {
+    background-color: #fff;
+    color: #0b0c10;
+    transition: background-color 0.5s ease-in-out;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+/* Tmavý režim */
+body.dark-mode {
+    background-color: #0b0c10; /* Tmavé pozadí pro tělo */
+    color: #c5c6c7; /* Světlejší text */
+}
+
+header.dark-mode {
+    background-color: #1f1f1f; /* Tmavé pozadí pro header */
+    color: #ffffff; /* Bílé texty pro header */
+}
+
+form.dark-mode {
+    background-color: #1f1f1f; /* Tmavé pozadí pro formulář */
+    color: #c5c6c7; /* Světlejší text */
+}
+
+footer.dark-mode {
+    background-color: #1f1f1f; /* Tmavé pozadí pro footer */
+    color: #c5c6c7; /* Světlejší text */
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .intro-grid, .technology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+}
+header {
+    background-color: #ffffff; /* Bílé pozadí pro header */
+    padding: 100px 20px; /* Změna paddingu pro přizpůsobení */
+    text-align: center;
+    color: #0b0c10; /* Barva textu v headeru */
+    position: relative; /* Umožní umístění tlačítka */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Plynulá animace pro header */
+}
+
+.theme-toggle {
+    padding: 10px 15px;
+    background-color: #0b0c10;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    position: absolute; /* Umístění do pravého horního rohu */
+    top: 20px; /* Vzdálenost od horního okraje */
+    right: 20px; /* Vzdálenost od pravého okraje */
+}
+
+.theme-toggle:hover {
+    background-color: #555;
 }

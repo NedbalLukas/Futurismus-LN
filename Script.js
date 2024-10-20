@@ -17,3 +17,21 @@ window.onload = function() {
         alert("Formulář byl úspěšně odeslán!");
     });
 }
+window.onload = function() {
+    // Ostatní animace...
+    
+    // Přepínání tématu
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const header = document.querySelector('header');
+    const form = document.querySelector('form');
+    const footer = document.querySelector('footer');
+
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        header.classList.toggle('dark-mode');
+        form.classList.toggle('dark-mode');
+        footer.classList.toggle('dark-mode');
+        themeToggle.innerText = body.classList.contains('dark-mode') ? 'Přepnout na světlé téma' : 'Přepnout na tmavé téma';
+    });
+}
