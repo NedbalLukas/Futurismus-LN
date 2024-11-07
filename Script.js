@@ -1,75 +1,235 @@
-// Animace GSAP
-gsap.from("header h1", { opacity: 0, y: -50, duration: 1 });
-gsap.from("header p", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
-gsap.from(".image-container img", { opacity: 0, scale: 0.8, duration: 1.5, ease: "bounce", scrollTrigger: "#intro" });
-gsap.from("#technology h2", { opacity: 0, x: -50, duration: 1, scrollTrigger: "#technology" });
-gsap.from("#journey .journey-step", {
-    opacity: 0, 
-    y: 50, 
-    duration: 1, 
-    stagger: 0.2, 
-    scrollTrigger: "#journey"
-});
+document.addEventListener("DOMContentLoaded", function () {
 
-// Tmavý režim
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    document.querySelector('header').classList.toggle('dark-mode');
-    document.querySelector('form').classList.toggle('dark-mode');
-    themeToggle.classList.toggle('dark-mode');
-});
-// Přidání funkce pro zobrazení okna s poděkováním a obnovení stránky
-document.getElementById('flightForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // Zobrazí okno s poděkováním
-    if (confirm('Děkujeme za rezervaci! Budeme se na vás těšit.')) {
-        // Obnoví stránku
-        location.reload();
-    }
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const dateInput = document.getElementById("date");
+    // Animace pro intro text a obrázek
+    gsap.from('.intro-image', {
+        opacity: 0,
+        x: -100,
+        duration: 1.5,
+        ease: "power3.out"
+    });
 
-    // Funkce pro nastavení povolených dat
-    function setMinDate() {
-        const today = new Date();
-        
-        // Nastavíme minimální datum na nejbližší neděli
-        const nextSunday = new Date(today.setDate(today.getDate() + (7 - today.getDay())));
+    gsap.from('.text h2', {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.5
+    });
 
-        // Nastavíme hodnotu min a max pro input
-        dateInput.min = nextSunday.toISOString().split('T')[0];
+    gsap.from('.text p', {
+        opacity: 0,
+        y: 30,
+        duration: 1.2,
+        ease: "power3.out",
+        delay: 1
+    });
 
-        // Vytvoříme pole pro neděle každý druhý týden
-        const allowedDates = [];
-        for (let i = 0; i < 10; i++) { // Například 10 nedělí dopředu
-            const sunday = new Date(nextSunday);
-            sunday.setDate(sunday.getDate() + (i * 14)); // Každé 2 týdny
-            allowedDates.push(sunday.toISOString().split('T')[0]);
+    // Animace pro technologii sekci
+    gsap.from('.tech-content .text', {
+        opacity: 0,
+        y: 50,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.5
+    });
+
+    gsap.from('.tech-image', {
+        opacity: 0,
+        x: 100,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 1
+    });
+
+    // Animace pro krokové obrázky v Journey sekci
+    gsap.from('.journey-steps .step', {
+        opacity: 0,
+        y: 100,
+        stagger: 0.2,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 1
+    });
+
+    // Animace pro texty v Journey sekci
+    gsap.from('.journey-steps h3', {
+        opacity: 0,
+        y: 50,
+        stagger: 0.3,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 1.2
+    });
+
+    // Animace pro pricing tabulku
+    gsap.from('.pricing-table', {
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 1.5
+    });
+
+    // Animace pro rezervaci sekci
+    gsap.from('.reserve-section', {
+        opacity: 0,
+        y: 100,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 2
+    });
+
+    gsap.from('.reserve-content h2', {
+        opacity: 0,
+        x: -50,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 2.2
+    });
+
+    gsap.from('.reserve-form input, .reserve-form select', {
+        opacity: 0,
+        y: 20,
+        stagger: 0.3,
+        duration: 1,
+        ease: "power3.out",
+        delay: 2.5
+    });
+
+    gsap.from('.reserve-btn', {
+        opacity: 0,
+        y: 20,
+        duration: 1.2,
+        ease: "power3.out",
+        delay: 3
+    });
+
+    // ScrollTrigger animace pro texty a obrázky při scrollování
+
+    // Intro text
+    ScrollTrigger.create({
+        trigger: '.intro-content',
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+            gsap.to('.intro-content .text h2', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+            gsap.to('.intro-content .text p', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
         }
+    });
 
-        // Nastavíme validaci pro datum
-        dateInput.setAttribute("list", "allowed-dates");
-        const dataList = document.createElement("datalist");
-        dataList.id = "allowed-dates";
-        allowedDates.forEach(date => {
-            const option = document.createElement("option");
-            option.value = date;
-            dataList.appendChild(option);
-        });
-        document.body.appendChild(dataList);
-    }
+    // Technology section
+    ScrollTrigger.create({
+        trigger: '.tech-content',
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+            gsap.to('.tech-content .text', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+            gsap.to('.tech-image', {
+                opacity: 1,
+                x: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+        }
+    });
 
-    setMinDate(); // Zavolání funkce
+    // Journey section
+    ScrollTrigger.create({
+        trigger: '.journey-steps',
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+            gsap.to('.journey-steps .step', {
+                opacity: 1,
+                y: 0,
+                stagger: 0.2,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+            gsap.to('.journey-steps h3', {
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+        }
+    });
+
+    // Pricing table animation
+    ScrollTrigger.create({
+        trigger: '.pricing-table',
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+            gsap.to('.pricing-table', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+        }
+    });
+
+    // Reserve section animation
+    ScrollTrigger.create({
+        trigger: '.reserve-section',
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+            gsap.to('.reserve-section', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+            gsap.to('.reserve-content h2', {
+                opacity: 1,
+                x: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+        }
+    });
+
+    // Animace pro patičku (footer)
+    ScrollTrigger.create({
+        trigger: 'footer',
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+            gsap.to('footer', {
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power3.out"
+            });
+        }
+    });
 });
-const flightForm = document.getElementById("flightForm");
-flightForm.addEventListener("submit", function(event) {
-    event.preventDefault(); // Zabráníme odeslání formuláře
+// Burger Menu Toggle
+document.getElementById('menu-icon').addEventListener('click', function() {
+    const navLinks = document.getElementById('nav-links');
+    const menuIcon = document.getElementById('menu-icon');
 
-    // Zobrazíme okno s potvrzením
-    alert("Děkujeme! Budeme se na vás těšit.");
-    
-    // Načteme stránku znovu
-    location.reload();
+    // Toggle the active class for the nav links
+    navLinks.classList.toggle('active');
+
+    // Toggle the active class for the burger icon
+    menuIcon.classList.toggle('active');
 });
